@@ -49,6 +49,24 @@ function dashboardUrl(demo) {
   const params = new URLSearchParams({
     demo: "1",
     vertical: demo.vertical,
+  });
+  return `${base}/indie-dashboard.html?${params.toString()}`;
+}
+
+function connectionsUrl(demo) {
+  const params = new URLSearchParams({
+    demo: "1",
+    vertical: demo.vertical,
+    internalDemo: "1",
+    connectorDiagnostics: "1",
+  });
+  return `${base}/indie-dashboard.html?${params.toString()}#connections-card`;
+}
+
+function focusedTourUrl(demo) {
+  const params = new URLSearchParams({
+    demo: "1",
+    vertical: demo.vertical,
     internalDemo: "1",
     tour: "store-visit",
   });
@@ -82,8 +100,10 @@ function render() {
             <p class="demo-card-copy">${demo.copy}</p>
             <div class="demo-actions">
               <a class="btn-primary" href="${dashboardUrl(demo)}">Owner dashboard</a>
+              <a class="btn-secondary" href="${connectionsUrl(demo)}">All connections</a>
               <a class="btn-secondary" href="${storefrontUrl(demo)}">Storefront</a>
               <a class="btn-secondary" href="${customerUrl(demo)}">Customer view</a>
+              <a class="btn-secondary" href="${focusedTourUrl(demo)}">Focused tour</a>
               <a class="btn-secondary" href="${base}/${demo.vertical === "books" ? "books" : demo.vertical}">Landing page</a>
             </div>
           </div>

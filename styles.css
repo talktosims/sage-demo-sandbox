@@ -165,6 +165,19 @@ h1 {
   max-width: 650px;
 }
 
+.owner-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.owner-actions .btn-primary,
+.owner-actions .btn-secondary {
+  flex: 0 0 auto;
+}
+
 .card-eyebrow {
   color: var(--indigo);
   font-size: 12px;
@@ -291,7 +304,9 @@ h1 {
   .logo-sub,
   .top-actions { display: none; }
   .owner-flow-card { align-items: stretch; flex-direction: column; }
-  .btn-primary { width: 100%; }
+  .owner-actions { display: grid; grid-template-columns: 1fr; }
+  .btn-primary,
+  .btn-secondary { width: 100%; }
   .demo-grid { grid-template-columns: 1fr; }
   .demo-actions { grid-template-columns: 1fr; }
 }
