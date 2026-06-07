@@ -2,307 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Sage Demo Sandbox Prototype</title>
+    <title>SAGE Demo Launcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="https://indieco.shop/icon-192.png?v=6" />
+    <link rel="apple-touch-icon" href="https://indieco.shop/icon-192.png?v=6" />
     <link rel="stylesheet" href="./styles.css" />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="app-shell">
-      <header class="hero-band">
-        <img src="./assets/demo-retail-banner.png" alt="Independent retail storefronts" />
-        <div class="hero-tint"></div>
-        <nav class="topbar" aria-label="Demo console">
-          <div class="brand-lockup">
-            <span class="brand-mark">S</span>
-            <div>
-              <strong>Sage Demo Sandbox</strong>
-              <span>demo.indieco.shop</span>
-            </div>
-          </div>
-          <div class="staff-pill">
-            <i data-lucide="shield-check" aria-hidden="true"></i>
-            <span>Staff only</span>
-          </div>
-        </nav>
-        <section class="hero-content" aria-labelledby="page-title">
-          <div>
-            <p class="eyebrow">Private sales console</p>
-            <h1 id="page-title">Walk a prospect through Sage using a ready-made local business.</h1>
-          </div>
-          <div class="hero-actions" aria-label="Primary actions">
-            <button class="primary-btn" data-jump="launcher">
-              <i data-lucide="store" aria-hidden="true"></i>
-              <span>Choose Vertical</span>
-            </button>
-            <button class="ghost-btn" id="resetDemoBtn">
-              <i data-lucide="refresh-cw" aria-hidden="true"></i>
-              <span>Reset</span>
-            </button>
-          </div>
-        </section>
-      </header>
-
-      <main>
-        <section class="nav-band" aria-label="Demo stages">
-          <div class="stage-tabs" role="tablist" aria-label="Demo stages">
-            <button class="stage-tab is-active" data-stage="launcher" role="tab" aria-selected="true">
-              <i data-lucide="layout-grid" aria-hidden="true"></i>
-              <span>Launcher</span>
-            </button>
-            <button class="stage-tab" data-stage="onboarding" role="tab" aria-selected="false">
-              <i data-lucide="plug-zap" aria-hidden="true"></i>
-              <span>Onboarding</span>
-            </button>
-            <button class="stage-tab" data-stage="dashboard" role="tab" aria-selected="false">
-              <i data-lucide="list-checks" aria-hidden="true"></i>
-              <span>Dashboard</span>
-            </button>
-            <button class="stage-tab" data-stage="proof" role="tab" aria-selected="false">
-              <i data-lucide="trending-up" aria-hidden="true"></i>
-              <span>Proof</span>
-            </button>
-          </div>
-        </section>
-
-        <section class="workspace-band" id="launcher" data-panel="launcher">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Demo launcher</p>
-              <h2>Pick the story that matches the room.</h2>
-            </div>
-            <button class="icon-btn" id="copyDemoUrlBtn" title="Copy demo URL" aria-label="Copy demo URL">
-              <i data-lucide="copy" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div class="launcher-layout">
-            <div class="vertical-grid" id="verticalGrid" aria-label="Vertical demos"></div>
-
-            <aside class="prospect-panel" aria-labelledby="personalize-title">
-              <h3 id="personalize-title">Prospect View</h3>
-              <label for="prospectName">Business name</label>
-              <div class="input-row">
-                <input id="prospectName" type="text" value="Maple Street Thrift" autocomplete="off" />
-                <button class="square-btn" id="applyNameBtn" title="Apply name" aria-label="Apply prospect name">
-                  <i data-lucide="check" aria-hidden="true"></i>
-                </button>
-              </div>
-
-              <label>OAuth example</label>
-              <div class="oauth-note">
-                <span>
-                  <i data-lucide="shopping-bag" aria-hidden="true"></i>
-                  Shopify Catalog
-                </span>
-                <p>Read-only product import with no public-facing action.</p>
-              </div>
-
-              <div class="demo-summary">
-                <img id="prospectProfileImage" src="./assets/profile-thrift-store.png" alt="Maple Street Thrift profile" />
-                <div>
-                  <span id="selectedVerticalPill">Riverbend Thrift</span>
-                  <strong id="prospectPreviewName">Maple Street Thrift</strong>
-                  <p id="prospectPreviewText">Seeded subscriber account with social, website, email, Google, and POS demo data.</p>
-                </div>
-              </div>
-
-              <button class="primary-btn full" data-jump="onboarding">
-                <i data-lucide="play" aria-hidden="true"></i>
-                <span>Start Walkthrough</span>
-              </button>
-            </aside>
-          </div>
-        </section>
-
-        <section class="workspace-band is-hidden" id="onboarding" data-panel="onboarding">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Onboarding</p>
-              <h2 id="onboardingTitle">Connect Maple Street Thrift.</h2>
-            </div>
-            <button class="primary-btn" data-jump="dashboard">
-              <i data-lucide="arrow-right" aria-hidden="true"></i>
-              <span>Open Dashboard</span>
-            </button>
-          </div>
-
-          <div class="onboarding-grid">
-            <div class="setup-column">
-              <div class="setup-step is-complete">
-                <i data-lucide="badge-check" aria-hidden="true"></i>
-                <div>
-                  <strong>Business profile</strong>
-                  <span id="profileSummary">Local thrift store in Austin with weekly drops and donation events.</span>
-                </div>
-              </div>
-              <div class="setup-step is-current">
-                <i data-lucide="plug" aria-hidden="true"></i>
-                <div>
-                  <strong>Connections</strong>
-                  <span>One account is left open for the live authorization moment.</span>
-                </div>
-              </div>
-              <div class="setup-step">
-                <i data-lucide="sparkles" aria-hidden="true"></i>
-                <div>
-                  <strong>Seed dashboard</strong>
-                  <span>Subscriber gates are unlocked and tasks are ready.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="connection-table" aria-label="Demo connections">
-              <div class="connection-row is-connected">
-                <span><i data-lucide="search-check" aria-hidden="true"></i>Google Business Profile</span>
-                <strong>Connected</strong>
-              </div>
-              <div class="connection-row is-connected">
-                <span><i data-lucide="shopping-bag" aria-hidden="true"></i>Website CMS</span>
-                <strong>Connected</strong>
-              </div>
-              <div class="connection-row is-connected">
-                <span><i data-lucide="receipt-text" aria-hidden="true"></i><span id="posName">Square POS</span></span>
-                <strong>Connected</strong>
-              </div>
-              <div class="connection-row is-connected">
-                <span><i data-lucide="mail-check" aria-hidden="true"></i>Email Marketing</span>
-                <strong>Connected</strong>
-              </div>
-              <div class="connection-row" id="shopifyConnectionRow">
-                <span><i data-lucide="shopping-bag" aria-hidden="true"></i>Shopify Catalog</span>
-                <button class="primary-btn small" id="connectShopifyBtn">
-                  <i data-lucide="key-round" aria-hidden="true"></i>
-                  <span>Authorize</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="workspace-band is-hidden" id="dashboard" data-panel="dashboard">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Subscriber dashboard</p>
-              <h2 id="dashboardTitle">Maple Street Thrift has work ready.</h2>
-            </div>
-            <div class="button-cluster">
-              <button class="ghost-btn" id="generateTaskBtn">
-                <i data-lucide="plus" aria-hidden="true"></i>
-                <span>Next Task</span>
-              </button>
-              <button class="primary-btn" data-jump="proof">
-                <i data-lucide="bar-chart-3" aria-hidden="true"></i>
-                <span>Show Results</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="dashboard-layout">
-            <aside class="metric-rail" aria-label="Current demo metrics">
-              <div class="metric">
-                <span>Google profile</span>
-                <strong id="googleMetric">64%</strong>
-                <progress id="googleProgress" max="100" value="64"></progress>
-              </div>
-              <div class="metric">
-                <span>Homepage SEO</span>
-                <strong id="seoMetric">58%</strong>
-                <progress id="seoProgress" max="100" value="58"></progress>
-              </div>
-              <div class="metric">
-                <span>Catalog sync</span>
-                <strong id="socialMetric">0</strong>
-                <small>products imported</small>
-              </div>
-              <div class="metric">
-                <span>Content plan</span>
-                <strong>7 days</strong>
-                <small>daily suggestions queued</small>
-              </div>
-            </aside>
-
-            <div class="task-board">
-              <div class="task-list" id="taskList" aria-label="Generated tasks"></div>
-            </div>
-
-            <aside class="detail-panel" id="detailPanel" aria-live="polite">
-              <div class="empty-detail">
-                <i data-lucide="mouse-pointer-click" aria-hidden="true"></i>
-                <strong>Select a task</strong>
-                <span>Drafts, previews, and before/after changes appear here.</span>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section class="workspace-band is-hidden" id="proof" data-panel="proof">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Proof outcomes</p>
-              <h2 id="proofTitle">What changed during the walkthrough.</h2>
-            </div>
-            <button class="ghost-btn" data-jump="launcher">
-              <i data-lucide="rotate-ccw" aria-hidden="true"></i>
-              <span>New Prospect</span>
-            </button>
-          </div>
-
-          <div class="proof-grid">
-            <div class="proof-item">
-              <span>Google completeness</span>
-              <strong id="proofGoogle">64% to 64%</strong>
-              <small id="proofGoogleDelta">Waiting for profile fix</small>
-            </div>
-            <div class="proof-item">
-              <span>Homepage SEO score</span>
-              <strong id="proofSeo">58% to 58%</strong>
-              <small id="proofSeoDelta">Waiting for SEO task</small>
-            </div>
-            <div class="proof-item">
-              <span>Catalog products</span>
-              <strong id="proofPosts">0</strong>
-              <small id="proofPostsDelta">Waiting for Shopify OAuth</small>
-            </div>
-            <div class="proof-item">
-              <span>Approvals ready</span>
-              <strong id="proofApprovals">0</strong>
-              <small>Email and product spotlight approvals</small>
-            </div>
-          </div>
-
-          <div class="content-plan-band">
-            <div class="section-heading compact">
-              <div>
-                <p class="eyebrow">7-day plan</p>
-                <h3 id="planTitle">Daily suggestions for Maple Street Thrift</h3>
-              </div>
-            </div>
-            <div class="day-strip" id="dayStrip" aria-label="Content plan days"></div>
-            <div class="plan-preview" id="planPreview"></div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <div class="modal-backdrop is-hidden" id="oauthModal" role="dialog" aria-modal="true" aria-labelledby="oauthTitle">
-      <div class="modal">
-        <button class="icon-btn modal-close" id="closeOauthBtn" title="Close" aria-label="Close OAuth modal">
-          <i data-lucide="x" aria-hidden="true"></i>
-        </button>
-        <i class="modal-icon" data-lucide="send" aria-hidden="true"></i>
-        <h2 id="oauthTitle">Authorize Shopify Catalog</h2>
-        <p id="oauthBody">Sage will import product names, categories, images, and inventory signals in read-only demo mode.</p>
-        <div class="modal-actions">
-          <button class="ghost-btn" id="cancelOauthBtn">Cancel</button>
-          <button class="primary-btn" id="authorizeOauthBtn">
-            <i data-lucide="key-round" aria-hidden="true"></i>
-            <span>Authorize</span>
-          </button>
+    <nav class="topbar">
+      <div class="topbar-inner">
+        <a class="logo" href="https://indieco.shop/" aria-label="SAGE home">
+          <img src="https://indieco.shop/icon-192.png?v=6" alt="" />
+          <span>SAGE</span>
+          <span class="logo-sub">Demo launcher</span>
+        </a>
+        <div class="top-actions">
+          <a class="top-nav-link" href="https://indieco.shop/indie-dashboard.html?demo=1&vertical=records&internalDemo=1&tour=store-visit#store-visit-tour">
+            Open actual dashboard
+          </a>
         </div>
       </div>
-    </div>
+    </nav>
+
+    <main class="wrap">
+      <section class="greeting">
+        <div class="date-row">Staff-only sales aid</div>
+        <h1>Choose a real SAGE demo surface.</h1>
+        <p class="sub">
+          This launcher is only the shortcut menu. The walkthrough opens the actual IndieCo/SAGE dashboard,
+          storefront, and customer screens so prospects see the same product they would use.
+        </p>
+      </section>
+
+      <section class="owner-flow-card" aria-label="Recommended walkthrough">
+        <div>
+          <div class="card-eyebrow">Recommended iPad path</div>
+          <h2>Start with the owner dashboard.</h2>
+          <p>
+            Use the real SAGE demo dashboard for onboarding, daily tasks, storefront tools, and approval surfaces.
+            This keeps the sales demo aligned with the live product.
+          </p>
+        </div>
+        <a class="btn-primary" href="https://indieco.shop/indie-dashboard.html?demo=1&vertical=records&internalDemo=1&tour=store-visit#store-visit-tour">
+          Start walkthrough
+        </a>
+      </section>
+
+      <section class="vertical-section" aria-labelledby="vertical-title">
+        <div class="section-head">
+          <div>
+            <div class="card-eyebrow">Vertical demos</div>
+            <h2 id="vertical-title">Open the real demo for the shop in front of you.</h2>
+          </div>
+        </div>
+        <div class="demo-grid" id="demoGrid"></div>
+      </section>
+
+      <section class="utility-grid" aria-label="Shared demo utilities">
+        <a class="utility-card" href="https://indieco.shop/customer-account.html?demo=1&shop=riverbend-records&vertical=records">
+          <strong>Customer preferences</strong>
+          <span>Show the customer-facing account/preferences experience.</span>
+        </a>
+        <a class="utility-card" href="https://indieco.shop/#demo-storefronts">
+          <strong>Public demo storefronts</strong>
+          <span>Jump to the storefront demos already published on IndieCo.</span>
+        </a>
+        <a class="utility-card" href="https://indieco.shop/indie-dashboard.html?demo=1&vertical=thrift&internalDemo=1&tour=store-visit#store-visit-tour">
+          <strong>Quick resale walkthrough</strong>
+          <span>Use this for thrift, vintage, consignment, and secondhand shops.</span>
+        </a>
+      </section>
+    </main>
   </body>
 </html>
