@@ -23,7 +23,7 @@ Create a private staff-only demo environment at `demo.indieco.shop` that lets In
 4. Start onboarding with most connections already complete.
 5. Leave one low-consequence connection open, preferably Shopify Catalog in read-only mode, to show OAuth.
 6. Land on a populated paying-subscriber dashboard.
-7. Click tasks and show drafts, previews, approvals, and numerical before/after results.
+7. Click tasks and show drafts, previews, review steps, and numerical before/after results.
 8. End by sending them to the existing free checkup flow for their real website.
 
 ## Answers To The Product Questions
@@ -49,7 +49,7 @@ For the sales demo, use deterministic seeded suggestions so the walkthrough is r
 
 ### Email Draft
 
-Yes, the user should click into the task and see the email draft before approval. The demo should make it clear that Sage prepares work, but the business owner approves before sending.
+Yes, the user should click into the task and see the email draft before sending. The demo should make it clear that Sage prepares work, but the shop reviews it before anything goes out.
 
 ### Product Spotlight
 
@@ -75,7 +75,7 @@ Recommended demo moment:
 4. Sage shows `42 products imported`.
 5. The dashboard immediately uses that catalog data for product spotlight, email, SEO, and social draft tasks.
 
-Sage can still show social post drafts, but the demo should stop at approval. Public posting can be explained as something they turn on after connecting their real social accounts.
+Sage can still show social post drafts, but the demo should stop at review and confirmation. Public posting can be explained as something they turn on after connecting their real social accounts.
 
 ## Vertical Strategy
 
